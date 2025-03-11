@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/ingredient.dart';
 import '../widgets/cupcake_preview.dart';
-import '../widgets/app_scaffold.dart';
 
 class BuilderScreen extends StatefulWidget {
   @override
@@ -24,29 +23,26 @@ class _BuilderScreenState extends State<BuilderScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return AppScaffold(
-      title: 'Personaliza tu Cupcake',
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(child: CupcakePreview(ingredients: ingredients)),
-          Wrap(
-            spacing: 8,
-            children: List.generate(
-              ingredients.length,
-              (index) => ChoiceChip(
-                label: Text(ingredients[index].name),
-                selected: ingredients[index].isSelected,
-                onSelected: (_) => toggleIngredient(index),
-              ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(child: CupcakePreview(ingredients: ingredients)),
+        Wrap(
+          spacing: 8,
+          children: List.generate(
+            ingredients.length,
+            (index) => ChoiceChip(
+              label: Text(ingredients[index].name),
+              selected: ingredients[index].isSelected,
+              onSelected: (_) => toggleIngredient(index),
             ),
           ),
-          ElevatedButton(
-            onPressed: () => Navigator.pushNamed(context, '/checkout'),
-            child: Text('Finalizar Pedido'),
-          ),
-        ],
-      ),
+        ),
+        ElevatedButton(
+          onPressed: () => Navigator.pushNamed(context, '/checkout'),
+          child: Text('Finalizar Pedido'),
+        ),
+      ],
     );
   }
 }

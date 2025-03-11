@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
 
-class BNavigator extends StatefulWidget {
-  const BNavigator ({Key? key}) : super(key: key);
-  
-  @override
-  _BNavigatorState createState() => _BNavigatorState();
-}
+class BottomNavBar extends StatelessWidget {
+  final int selectedIndex;
+  final Function(int) onItemTapped;
 
-class _BNavigatorState extends State<BNavigator> {
+  const BottomNavBar({
+    required this.selectedIndex,
+    required this.onItemTapped,
+  });
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      currentIndex: selectedIndex,
+      onTap: onItemTapped,
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons. home),
-          label: 'Home',
+          icon: Icon(Icons.home),
+          label: 'Inicio',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons. cake),
-          label: 'Create'
+          icon: Icon(Icons.search),
+          label: 'Buscar',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons. shopping_cart),
-          label: 'Checkout'
+          icon: Icon(Icons.person),
+          label: 'Perfil',
         ),
-      ]
+      ],
     );
   }
 }

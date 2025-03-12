@@ -64,6 +64,10 @@ flutter:
     - assets/fresa.png
     - assets/vainilla.png
     - assets/chispas.png
+    - assets/caramelo.png
+    - assets/menta.png
+    - assets/oreo.png
+    - assets/frambuesa.png
     - assets/sweetbite_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

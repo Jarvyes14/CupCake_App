@@ -17,15 +17,15 @@ class BottomNavBar extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: 'Inicio',
+          label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.search),
-          label: 'Buscar',
+          icon: Icon(Icons.cake),
+          label: 'Builder',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Perfil',
+          icon: Icon(Icons.shopping_cart),
+          label: 'Checkout',
         ),
       ],
     );

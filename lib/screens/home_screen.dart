@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                 height: 200,
                 decoration: BoxDecoration(
                   color: product.color.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(0),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

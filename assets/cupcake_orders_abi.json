@@ -1,0 +1,20 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string[]",
+        "name": "flavors",
+        "type": "string[]"
+      },
+      {
+        "internalType": "string[][]",
+        "name": "ingredients",
+        "type": "string[][]"
+      }
+    ],
+    "name": "addOrder",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

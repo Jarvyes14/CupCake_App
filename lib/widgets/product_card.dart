@@ -12,7 +12,7 @@ class ProductCard extends StatelessWidget {
       offset: Offset(0, offset), // Desplazar solo en eje Y
       child: Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40),
+          borderRadius: BorderRadius.circular(100),
         ),
         elevation: 4,
         child: Center(

@@ -73,7 +73,7 @@ flutter:
     - assets/oreo.png
     - assets/frambuesa.png
     - assets/sweetbite_logo.png
-    - assets/cupcake_orders_abi.json
+    - assets/CupcakeOrder.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

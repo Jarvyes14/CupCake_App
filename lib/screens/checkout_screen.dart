@@ -34,15 +34,10 @@ class CheckoutScreen extends StatelessWidget {
 
 
     try {
-      print('Flavors: $flavors');
-      print('Ingredients: $ingredients');
       await blockchainService.addOrder(flavors, ingredients);
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Cupcakes subidos a la blockchain con éxito.')),
       );
-      // de aqui no pasa
-      print('Flavors: $flavors');
-      print('Ingredients: $ingredients');
     } catch (e) {
       print('Error al subir a la blockchain: $e');
       ScaffoldMessenger.of(context).showSnackBar(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Para cargar el ABI desde un archivo
 import '../screens/builder_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/checkout_screen.dart';
@@ -24,28 +23,14 @@ class _HomePageState extends State<HomePage> {
   ];
 
   // Instancia de BlockchainService
-  final BlockchainService _blockchainService = BlockchainService(
-    rpcUrl: "http://127.0.0.1:7545", // Cambia esto por tu nodo Ethereum
-    privateKey: "0x976ca9291a35c587f3b1e800f6f43b62f15e271decb999ea4bf9ad7c4b67fa98", // Cambia esto por tu clave privada
-    contractAddress: "0x792bbDb9D9913245103120d949d2c6516e318030", // Cambia esto por la dirección del contrato
-  );
-
+  late BlockchainService _blockchainService;
   late Future<void> _initialization; // Para manejar la inicialización del contrato
 
   @override
   void initState() {
     super.initState();
-    _initialization = initializeBlockchainService();
-  }
-
-  Future<void> initializeBlockchainService() async {
-    try {
-      final abi = await rootBundle.loadString('assets/cupcake_orders_abi.json');
-      await _blockchainService.initializeContract(abi);
-      print('Contrato inicializado correctamente');
-    } catch (e) {
-      print('Error al inicializar el contrato: $e');
-    }
+    _blockchainService = BlockchainService(); // Inicializa el servicio
+    _initialization = _blockchainService.initialize(); // Llama a la inicialización del contrato
   }
 
   void _onItemTapped(int index) {
